@@ -1,5 +1,24 @@
 #Junior Python Developer position 
-Test task
+#Test task
+
+##Installation
+
+```shell
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+```
+
+Install dependencies:
+```shell
+poetry install
+```
+
+Use created venv:
+
+```shell
+poetry shell
+```
+
+##Using
 
 Run from the main directory of the project to get help about the options:
 
