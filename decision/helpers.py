@@ -47,6 +47,7 @@ def process_file(file_path: str) -> Counter:
                 for word in re.split(r",|\.|\s", line):
                     word = word.strip()
                     if word:
+                        word = word.lower()
                         words[word] += 1
     except UnicodeDecodeError:
         # It happens if it is binary file
