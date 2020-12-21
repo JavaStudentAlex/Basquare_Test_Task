@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from os.path import abspath
 
 from .helpers import process_files_in_dir, work_with_db
 
@@ -14,8 +15,9 @@ args = parser.parse_args()
 
 if args.directory:
     try:
-        bag_of_words = process_files_in_dir(args.directory)
-        work_with_db(bag_of_words, args.directory)
+        dir_path = abspath(args.directory)
+        bag_of_words = process_files_in_dir(dir_path)
+        work_with_db(bag_of_words, dir_path)
         result = "Words are counted"
     except FileNotFoundError:
         result = "Wrong directory! Please, try another one."
